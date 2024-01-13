@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package hello;
+
+//github.com/<username>/<repo>/protogen/go/name
+option go_package="github.com/ShreyanshKeshav33/protobuf-grpc-repo/protogen/go/hello";
+
+message HelloRequest{
+    string name=1;
+}
+
+message HelloResponse{
+    string greet=1;
+}
+
+service HelloService{ //service--> grpc service, we use one response and once request-> unary show below
+    rpc SayHello(HelloRequest) returns (HelloResponse) {} 
+}
